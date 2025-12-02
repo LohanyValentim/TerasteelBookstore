@@ -4,7 +4,6 @@ const PORT = 3000;
 
 app.use(express.json());
 
-// Rota teste para ver se o backend está funcionando
 app.get("/", (req, res) => {
   res.json({ mensagem: "Backend da Biblioteca Online funcionando!" });
 });
@@ -13,6 +12,7 @@ app.get("/", (req, res) => {
 const livrosRoutes = require("./routes/livros");
 app.use("/livros", livrosRoutes);
 
+// Inicia o servidor
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
